@@ -1,9 +1,6 @@
 var express = require("express");
 var app = express();
 
-app.use(express.static("public")); //here we tell express to serve from the public directory, where js and css codes can be placed
-app.set("view engine", "ejs"); //with this we can save typing ".ejs" after each file 
-
 app.get("/", function(req, res){
 	//res.send("<h1>Welcome to the homepage!</h1><h2> blah blah</h2>") //too painful to type an HTML page this way, so use "render" method and templates istead:
 	res.render("home.ejs") //this template file shd be placed in the "views" subdir and the "ejs" npm package shd be installed with --save parameter
